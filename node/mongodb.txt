@@ -1,0 +1,13 @@
+#admin进入
+docker exec -it 10b15378e5ae  mongo admin
+#创建用户和密码
+db.createUser({ user: 'root', pwd: '123456', roles: [ { role: "userAdminAnyDatabase", db: "admin" } ] });
+#验证一下对不对
+db.auth("root","123456");
+#退出
+exit
+
+#修改密码
+use admin;
+switched to db admin
+> db.changeUserPassword('root','17851182');
